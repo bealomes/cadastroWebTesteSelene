@@ -31,19 +31,21 @@ senha.addEventListener('focusout', validarSenha);
 neste caso o objeto 'nome'
 */
 
-function validarNome(e){ 
-    //declaração da expressão regular para definir o formato de um nome válido
-    const regexNome = /^[A-Z][a-z]+ [A-Z][a-z]+$/;
-    
-    console.log(e); //impressão em console do objeto evento e
-    console.log(e.target.value); //impressão em console do valor do objeto 'nome' que originou o evento   
+function validarNome(e) {
+    // Declaração da expressão regular para definir o formato de um nome válido (completo ou apenas um nome)
+    const regexNomeCompleto = /^[A-Z][a-z] [A-Z][a-z]$/;
+    const regexNome = /^[A-Z][a-z]$/;
 
-    if(e.target.value.trim().match(regexNome)==null){
-        //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
+    console.log(e); // Impressão em console do objeto evento 'e'
+    console.log(e.target.value); // Impressão em console do valor do objeto 'nome' que originou o evento   
+
+    var noSpacesName = nome.value.replace(/\s/g, '');
+
+    if (!e.target.value.trim().match(regexNomeCompleto) && !e.target.value.trim().match(regexNome) && (noSpacesName.length < 6 )) {
+        // Muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
         nomeHelp.textContent = "Formato de nome inválido"; 
-        nomeHelp.style.color="red";
-    }
-    else{
+        nomeHelp.style.color = "red";
+    } else {
         nomeHelp.textContent = "";
     }       
 }
@@ -105,15 +107,12 @@ function validarSenha() {
         switch (forcaSenha) {
             case "Senha forte":
                 passStrengthMeter.value = 30;
-                passStrengthMeter.className = 'strong';
                 break;
             case "Senha moderada":
                 passStrengthMeter.value = 15;
-                passStrengthMeter.className = 'moderate';
                 break;
             case "Senha fraca":
                 passStrengthMeter.value = 5;
-                passStrengthMeter.className = 'weak';
                 break;
             default:
                 passStrengthMeter.value = 0;
