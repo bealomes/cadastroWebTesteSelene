@@ -13,7 +13,7 @@ service = Service("/snap/bin/firefox.geckodriver")
 driver = webdriver.Firefox(service=service)
 
 # Open the URL
-driver.get("https://cirillom.github.io/cadastro-usuario/")
+driver.get("https://bealomes.github.io/cadastroWebTesteSelene/")
 
 input_name_element = driver.find_element(By.ID, "inputName")
 input_name_help_element = driver.find_element(By.ID, "inputNameHelp")
@@ -29,31 +29,31 @@ input_password_help_element = driver.find_element(By.ID, "inputPasswordHelp")
 input_password_strength_element = driver.find_element(By.ID, "passStrengthMeter")
 
 input_button_element = driver.find_element(By.ID, "submitButton")
-input_result_element = driver.find_element(By.ID, "inputResult")
+input_result_element = driver.find_element(By.ID, "formResult")
 
 # input (name, expected name result)
 nameTests = [
     ("Gus", ""),
     ("Gustavo Moura", ""),
-    ("", "Formato de nome inválido")
+    ("", "Nome invalido")
 ]
 
 # input (year, expected year result)
 yearTests = [
     ("1999", ""),
-    ("", "Formato de ano inválido")
+    ("", "Ano invalido")
 ]
 
 # input (email, expected email result)
 emailTests = [
     ("gustavoscarenci@usp.br", ""),
-    ("", "Formato de email inválido")
+    ("", "Email invalido")
 ]
 
 # input (password, expected password result, expected password strength)
 passwordTests = [
     ("3uAm@Pud1m99", "Senha moderada", "20"),
-    ("", "Senha inválida.", "0"),
+    ("", "Senha invalida.", "0"),
 ]
 
 tests = {}
@@ -70,9 +70,9 @@ for (name, x_name_result), (year, x_year_result), (email, x_email_result), (pass
 
                 tests[testCount] = {}
 
-                x_result = "Formulário inválido!"
-                if x_name_result == "" and x_year_result == "" and x_email_result == "" and "Senha inválida." not in x_password_result:
-                    x_result = "Dados registrados com sucesso!"
+                x_result = "Cadastro invalido"
+                if x_name_result == "" and x_year_result == "" and x_email_result == "" and "Senha invalida" not in x_password_result:
+                    x_result = "Cadastro Valido"
 
                 # Write the test to the file
                 f.write(f"{testCount},{name},{x_name_result},{year},{x_year_result},{email},{x_email_result},{password},{x_password_result},{x_strength_result},{x_result}\n")

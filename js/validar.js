@@ -94,7 +94,7 @@ function avaliarForcaSenha(senha) {
     } else if (comprimento >= 6) {
         return "Senha fraca";
     }
-    return "Senha inválida";
+    return "Senha invalida";
 }
 
 //Função para validar se a senha fonecida é válida
