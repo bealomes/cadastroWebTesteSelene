@@ -4,13 +4,9 @@ from selenium.webdriver.firefox.service import Service
 from termcolor import colored
 from tqdm import tqdm
 import itertools
+import time
 
-# Create a new Firefox profile
-profile = webdriver.FirefoxProfile()
-
-# Set up the WebDriver with the new profile
-service = Service("/snap/bin/firefox.geckodriver")
-driver = webdriver.Firefox(service=service)
+driver = webdriver.Chrome()
 
 # Open the URL
 driver.get("https://bealomes.github.io/cadastroWebTesteSelene/")
@@ -59,6 +55,8 @@ passwordTests = [
 tests = {}
 testCount = 0
 total_iterations = len(nameTests) * len(yearTests) * len(emailTests) * len(passwordTests)
+
+time.sleep(5)
 
 #open file to write tests
 f = open("tests.csv", "w")
