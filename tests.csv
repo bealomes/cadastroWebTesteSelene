@@ -1,2 +1,6 @@
 Test,Name,ExpectedNameResult,Year,ExpectedYearResult,Email,ExpectedEmailResult,Password,ExpectedPasswordResult,ExpectedPasswordStrength,ExpectedResult
 1,Gus,Nome invalido,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
+2,Gus,Nome invalido,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
+3,Gus,Nome invalido,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
+4,Gus,Nome invalido,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
+5,Gus,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido

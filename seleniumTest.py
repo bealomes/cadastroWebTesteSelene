@@ -89,6 +89,7 @@ with open("tests.csv", "w") as f:
         input_password_element.send_keys(password)
 
         input_button_element.click()
+        input_button_element.click()
         
         # Espera por um curto período para garantir que todas as mensagens de validação sejam atualizadas
         time.sleep(1)
