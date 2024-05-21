@@ -72,9 +72,12 @@ function avaliarForcaSenha(senha) {
     const possuiCaractereEspecial = (senha.match(/[!@#%&]/g) || []).length > 0;
     const possuiNumero = (senha.match(/[0-9]/g) || []).length > 0;
     const possuiLetraMaiuscula = (senha.match(/[A-Z]/g) || []).length > 0;
+    const qtdLetraMaiuscula = (senha.match(/[A-Z]/g) || []).length;
     const comprimento = senha.length;
 
-    if (comprimento > 12 && possuiCaractereEspecial && possuiNumero && possuiLetraMaiuscula) {
+    console.log(qtdLetraMaiuscula);
+
+    if (comprimento > 12 && possuiCaractereEspecial && possuiNumero && possuiLetraMaiuscula && qtdLetraMaiuscula > 1) {
         return "Senha forte";
     } else if (comprimento > 8 && possuiCaractereEspecial && possuiNumero && possuiLetraMaiuscula) {
         return "Senha moderada";
