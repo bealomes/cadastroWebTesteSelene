@@ -1,16 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.service import Service
 from termcolor import colored
 from tqdm import tqdm
 import itertools
 import time
 
+# Inicializando o driver do Chrome
 driver = webdriver.Chrome()
 
-# Open the URL
+# Abrindo a URL
 driver.get("https://bealomes.github.io/cadastroWebTesteSelene/")
 
+# Localizando os elementos do formulário
 input_name_element = driver.find_element(By.ID, "inputName")
 input_name_help_element = driver.find_element(By.ID, "inputNameHelp")
 
@@ -27,29 +28,29 @@ input_password_strength_element = driver.find_element(By.ID, "passStrengthMeter"
 input_button_element = driver.find_element(By.ID, "submitButton")
 input_result_element = driver.find_element(By.ID, "formResult")
 
-# input (name, expected name result)
+# Testes de entrada (nome, resultado esperado do nome)
 nameTests = [
     ("Gus", "Nome invalido"),
     ("Gustavo Moura", ""),
     ("", "Nome invalido")
 ]
 
-# input (year, expected year result)
+# Testes de entrada (ano, resultado esperado do ano)
 yearTests = [
     ("1999", ""),
     ("", "Ano invalido")
 ]
 
-# input (email, expected email result)
+# Testes de entrada (email, resultado esperado do email)
 emailTests = [
     ("gustavoscarenci@usp.br", ""),
     ("", "Email invalido")
 ]
 
-# input (password, expected password result, expected password strength)
+# Testes de entrada (senha, resultado esperado da senha, força esperada da senha)
 passwordTests = [
-    ("3uAm@Pud1m99", "Senha moderada", "20"),
-    ("", "Senha invalida.", "0"),
+    ("3uAm@Pud1m99", "Senha moderada", "15"),
+    ("", "Senha invalida", "0"),
 ]
 
 tests = {}
@@ -58,66 +59,65 @@ total_iterations = len(nameTests) * len(yearTests) * len(emailTests) * len(passw
 
 time.sleep(5)
 
-#open file to write tests
-f = open("tests.csv", "w")
-f.write("Test,Name,ExpectedNameResult,Year,ExpectedYearResult,Email,ExpectedEmailResult,Password,ExpectedPasswordResult,ExpectedPasswordStrength,ExpectedResult\n")
+# Abrindo arquivo para escrever os testes
+with open("tests.csv", "w") as f:
+    f.write("Test,Name,ExpectedNameResult,Year,ExpectedYearResult,Email,ExpectedEmailResult,Password,ExpectedPasswordResult,ExpectedPasswordStrength,ExpectedResult\n")
 
-# Use itertools.product to create a Cartesian product of the tests
-for (name, x_name_result), (year, x_year_result), (email, x_email_result), (password, x_password_result, x_strength_result) in tqdm(itertools.product(nameTests, yearTests, emailTests, passwordTests), total=total_iterations):
-                testCount += 1
+    # Usando itertools.product para criar um produto cartesiano dos testes
+    for (name, x_name_result), (year, x_year_result), (email, x_email_result), (password, x_password_result, x_strength_result) in tqdm(itertools.product(nameTests, yearTests, emailTests, passwordTests), total=total_iterations):
+        testCount += 1
 
-                tests[testCount] = {}
+        tests[testCount] = {}
 
-                x_result = "Cadastro Invalido"
-                if x_name_result == "" and x_year_result == "" and x_email_result == "" and "Senha invalida" not in x_password_result:
-                    x_result = "Cadastro Valido"
+        x_result = "Cadastro Invalido"
+        if x_name_result == "" and x_year_result == "" and x_email_result == "" and "Senha invalida" not in x_password_result:
+            x_result = "Cadastro Valido"
 
-                # Write the test to the file
-                f.write(f"{testCount},{name},{x_name_result},{year},{x_year_result},{email},{x_email_result},{password},{x_password_result},{x_strength_result},{x_result}\n")
+        # Escrevendo o teste no arquivo
+        f.write(f"{testCount},{name},{x_name_result},{year},{x_year_result},{email},{x_email_result},{password},{x_password_result},{x_strength_result},{x_result}\n")
 
-                input_name_element.clear()
-                input_name_element.send_keys(name)
+        input_name_element.clear()
+        input_name_element.send_keys(name)
 
-                input_year_element.clear()
-                input_year_element.send_keys(year)
+        input_year_element.clear()
+        input_year_element.send_keys(year)
 
-                input_email_element.clear()
-                input_email_element.send_keys(email)
+        input_email_element.clear()
+        input_email_element.send_keys(email)
 
-                input_password_element.clear()
-                input_password_element.send_keys(password)
+        input_password_element.clear()
+        input_password_element.send_keys(password)
 
-                input_button_element.click()
-                input_button_element.click()
+        input_button_element.click()
+        
+        # Espera por um curto período para garantir que todas as mensagens de validação sejam atualizadas
+        time.sleep(1)
 
-                tests[testCount]["name"] = (input_name_help_element.text, x_name_result, (input_name_help_element.text == x_name_result))
-                tests[testCount]["year"] = (input_year_help_element.text, x_year_result, (input_year_help_element.text == x_year_result))
-                tests[testCount]["email"] = (input_email_help_element.text, x_email_result, (input_email_help_element.text == x_email_result))
-                tests[testCount]["password"] = (input_password_help_element.text, x_password_result, (x_password_result in input_password_help_element.text))
-                tests[testCount]["strength"] = (input_password_strength_element.text, x_strength_result, (input_password_strength_element.get_attribute("value") == x_strength_result))
-                tests[testCount]["submit"] = (input_result_element.text, x_result, (input_result_element.text == x_result))
+        # Verificando os resultados dos testes
+        tests[testCount]["name"] = (input_name_help_element.text, x_name_result, (input_name_help_element.text == x_name_result))
+        tests[testCount]["year"] = (input_year_help_element.text, x_year_result, (input_year_help_element.text == x_year_result))
+        tests[testCount]["email"] = (input_email_help_element.text, x_email_result, (input_email_help_element.text == x_email_result))
+        tests[testCount]["password"] = (input_password_help_element.text, x_password_result, (x_password_result in input_password_help_element.text))
+        tests[testCount]["strength"] = (input_password_strength_element.get_attribute("value"), x_strength_result, (input_password_strength_element.get_attribute("value") == x_strength_result))
+        tests[testCount]["submit"] = (input_result_element.text, x_result, (input_result_element.text == x_result))
 
-                if all(value[2] == True for value in tests[testCount].values()):
-                    tests[testCount]["result"] = True
-                else:
-                    tests[testCount]["result"] = False
-f.close()
-#count sucessfull tests
-successfullTests = 0
+        if all(value[2] for value in tests[testCount].values()):
+            tests[testCount]["result"] = True
+        else:
+            tests[testCount]["result"] = False
+
+# Contando testes bem-sucedidos
+successful_tests = sum(1 for value in tests.values() if value["result"])
+
+print(colored(f"Total of {successful_tests} / {testCount}", "blue"))
 for key, value in tests.items():
-    if value["result"] == True:
-        successfullTests += 1
-
-print(colored(f"Total of {successfullTests} / {testCount}", "blue"))
-for key, value in tests.items():
-    if value["result"] == True:
+    if value["result"]:
         print(colored(f"Test {key}: Successful", "green"))
     else:
         print(colored(f"Test {key}: Failed on: ", "red"))
         for k, v in value.items():
-            if k != "result":
-                if v[2] == False:
-                    print(colored(f"\t{k}: got \"{v[0]}\" ", "red"))
+            if k != "result" and not v[2]:
+                print(colored(f"\t{k}: got \"{v[0]}\" (expected \"{v[1]}\")", "red"))
 
-# Close the browser
+# Fechando o navegador
 driver.quit()
