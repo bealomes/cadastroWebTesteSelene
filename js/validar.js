@@ -46,7 +46,7 @@ function validarNome(e) {
 
     if (!e.target.value.trim().match(regexNomeCompleto) && !e.target.value.trim().match(regexNome) && (noSpacesName.length < 6 )) {
         // Muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputNameHelp
-        nomeHelp.textContent = "Nome inválido"; 
+        nomeHelp.textContent = "Nome invalido"; 
         nomeHelp.style.color = "red";
         return 0;
     } else {
@@ -59,7 +59,7 @@ function validarNome(e) {
 function validarAno() {
     const regexAno = /^(19\d\d|20[01]\d|2024)$/;
     if (!ano.value.trim().match(regexAno)) {
-        anoHelp.textContent = "Ano inválido";
+        anoHelp.textContent = "Ano invalido";
         anoHelp.style.color = "red";
         return 0;
     } else {
@@ -72,7 +72,7 @@ function validarAno() {
 function validarEmail() {
     const regexEmail = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(br|com|net|org)$/;
     if (!email.value.trim().match(regexEmail)) {
-        emailHelp.textContent = "Email inválido";
+        emailHelp.textContent = "Email invalido";
         emailHelp.style.color = "red";
         return 0;
     } else {
@@ -103,7 +103,7 @@ function validarSenha() {
     const regexNomeAno = new RegExp(nome.value.trim() + "|" + ano.value.trim(), "i");
 
     if (!senha.value.match(regexSenha) || senha.value.match(regexNomeAno)) {
-        senhaHelp.textContent = "Senha inválida";
+        senhaHelp.textContent = "Senha invalida";
         senhaHelp.style.color = "red";
         senhaResult.textContent = "";
         passStrengthMeter.value = 0;
@@ -146,7 +146,7 @@ ano.addEventListener('focusout', () => {
 
     if(anoTrimado.match(regexAno)==null){
         //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputYearHelp
-        anoHelp.textContent = "Ano inválido";
+        anoHelp.textContent = "Ano invalido";
         anoHelp.style.color="red";
     }
     else{
@@ -157,12 +157,12 @@ ano.addEventListener('focusout', () => {
         
         if( parseInt(anoTrimado) > parseInt(date.getFullYear()) ){
              //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputYearHelp
-            anoHelp.textContent = "Ano inválido";
+            anoHelp.textContent = "Ano invalido";
             anoHelp.style.color="red";
         }
         else if( parseInt(anoTrimado) < parseInt(date.getFullYear())-120 ){
              //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputYearHelp
-            anoHelp.textContent = "Ano inválido";
+            anoHelp.textContent = "Ano invalido";
             anoHelp.style.color="red";
         }
         else{
@@ -188,10 +188,10 @@ form.addEventListener('submit', function() {
 
    
     if (nomeValido && anoValido && emailValido && senhaValida) {
-        formResult.textContent = "Cadastro Válido";
+        formResult.textContent = "Cadastro Valido";
         formResult.style.color = "green";
     } else {
-        formResult.textContent = "Cadastro Inválido";
+        formResult.textContent = "Cadastro Invalido";
         formResult.style.color = "red";
     }
 });
