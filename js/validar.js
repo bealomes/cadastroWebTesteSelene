@@ -105,7 +105,6 @@ function validarSenha() {
         senhaHelp.textContent = "Senha invalida";
         senhaHelp.style.color = "red";
         passStrengthMeter.value = 0;
-        passStrengthMeter.className = 'invalid';
         return 0;
     } else {
         senhaHelp.textContent = "";
@@ -124,7 +123,6 @@ function validarSenha() {
                 break;
             default:
                 passStrengthMeter.value = 0;
-                passStrengthMeter.className = 'invalid';
         }
         return 1;
     }
@@ -179,6 +177,7 @@ showPassword.addEventListener('change', function() {
 
 // Função para validar o formulário ao clicar no botão Enviar
 form.addEventListener('submit', function() {
+    event.preventDefault();
     const nomeValido = validarNome({ target: nome });
     const anoValido = validarAno();
     const emailValido = validarEmail();
