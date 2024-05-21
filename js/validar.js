@@ -14,6 +14,9 @@ var senhaHelp = document.querySelector("#inputPasswordHelp");
 var senhaResult = document.querySelector("#inputResult");
 var passStrengthMeter =  document.querySelector('#passStrengthMeter');
 var showPassword =  document.querySelector('#showPassword');
+var form = document.querySelector('#singleForm');
+var formResult = document.querySelector('#formResult');
+
 
 
 /*declarando o evento listener para o campos de texto do form. 
@@ -146,7 +149,7 @@ ano.addEventListener('focusout', () => {
         
         if( parseInt(anoTrimado) > parseInt(date.getFullYear()) ){
              //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputYearHelp
-            anoHelp.textContent = `Ano inSenhaválido. O ano não pode ser maior que ${date.getFullYear()}.`;
+            anoHelp.textContent = `Ano inválido. O ano não pode ser maior que ${date.getFullYear()}.`;
             anoHelp.style.color="red";
         }
         else if( parseInt(anoTrimado) < parseInt(date.getFullYear())-120 ){
@@ -163,6 +166,24 @@ ano.addEventListener('focusout', () => {
 );
 
 
+// Evento para mostrar ou esconder a senha
 showPassword.addEventListener('change', function() {
     senha.type = this.checked ? 'text' : 'password';
 });
+
+// Função para validar o formulário ao clicar no botão Enviar
+form.addEventListener('submit', function() {
+    const nomeValido = validarNome({ target: nome });
+    const anoValido = validarAno();
+    const emailValido = validarEmail();
+    const senhaValida = validarSenha();
+
+    if (nomeValido && anoValido && emailValido && senhaValida) {
+        formResult.textContent = "Cadastro Válido";
+        formResult.style.color = "green";
+    } else {
+        formResult.textContent = "Cadastro Inválido";
+        formResult.style.color = "red";
+    }
+});
+
