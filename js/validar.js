@@ -55,7 +55,8 @@ function validarAno() {
 
 // Função para validar o e-mail
 function validarEmail() {
-    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(br|com|net|org)$/;
+    //const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(br|com|net|org)$/;
+    const regexEmail = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.(br|com|net|org)$/;
     if (!email.value.trim().match(regexEmail)) {
         emailHelp.textContent = "Email invalido";
         emailHelp.style.color = "red";
