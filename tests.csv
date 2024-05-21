@@ -1,25 +1,55 @@
 Test,Name,ExpectedNameResult,Year,ExpectedYearResult,Email,ExpectedEmailResult,Password,ExpectedPasswordResult,ExpectedPasswordStrength,ExpectedResult
-1,Gus,Nome invalido,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-2,Gus,Nome invalido,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-3,Gus,Nome invalido,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-4,Gus,Nome invalido,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
-5,Gus,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-6,Gus,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-7,Gus,Nome invalido,,Ano invalido,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-8,Gus,Nome invalido,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
-9,Gustavo Moura,,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Valido
-10,Gustavo Moura,,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-11,Gustavo Moura,,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-12,Gustavo Moura,,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
-13,Gustavo Moura,,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-14,Gustavo Moura,,,Ano invalido,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-15,Gustavo Moura,,,Ano invalido,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-16,Gustavo Moura,,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
-17,,Nome invalido,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-18,,Nome invalido,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-19,,Nome invalido,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-20,,Nome invalido,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
-21,,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-22,,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-23,,Nome invalido,,Ano invalido,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-24,,Nome invalido,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
+1,Bea,Nome invalido,2003,,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+2,Bea,Nome invalido,2003,,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+3,Bea,Nome invalido,2003,,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+4,Bea,Nome invalido,2003,,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+5,Bea,Nome invalido,2003,,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+6,Bea,Nome invalido,2003,,,Email invalido,,Senha invalida,0,Cadastro Invalido
+7,Bea,Nome invalido,1900,Ano invalido,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+8,Bea,Nome invalido,1900,Ano invalido,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+9,Bea,Nome invalido,1900,Ano invalido,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+10,Bea,Nome invalido,1900,Ano invalido,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+11,Bea,Nome invalido,1900,Ano invalido,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+12,Bea,Nome invalido,1900,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
+13,Bea,Nome invalido,,Ano invalido,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+14,Bea,Nome invalido,,Ano invalido,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+15,Bea,Nome invalido,,Ano invalido,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+16,Bea,Nome invalido,,Ano invalido,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+17,Bea,Nome invalido,,Ano invalido,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+18,Bea,Nome invalido,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
+19,Beatriz Lomes,,2003,,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Valido
+20,Beatriz Lomes,,2003,,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+21,Beatriz Lomes,,2003,,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+22,Beatriz Lomes,,2003,,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+23,Beatriz Lomes,,2003,,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+24,Beatriz Lomes,,2003,,,Email invalido,,Senha invalida,0,Cadastro Invalido
+25,Beatriz Lomes,,1900,Ano invalido,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+26,Beatriz Lomes,,1900,Ano invalido,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+27,Beatriz Lomes,,1900,Ano invalido,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+28,Beatriz Lomes,,1900,Ano invalido,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+29,Beatriz Lomes,,1900,Ano invalido,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+30,Beatriz Lomes,,1900,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
+31,Beatriz Lomes,,,Ano invalido,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+32,Beatriz Lomes,,,Ano invalido,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+33,Beatriz Lomes,,,Ano invalido,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+34,Beatriz Lomes,,,Ano invalido,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+35,Beatriz Lomes,,,Ano invalido,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+36,Beatriz Lomes,,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
+37,,Nome invalido,2003,,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+38,,Nome invalido,2003,,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+39,,Nome invalido,2003,,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+40,,Nome invalido,2003,,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+41,,Nome invalido,2003,,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+42,,Nome invalido,2003,,,Email invalido,,Senha invalida,0,Cadastro Invalido
+43,,Nome invalido,1900,Ano invalido,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+44,,Nome invalido,1900,Ano invalido,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+45,,Nome invalido,1900,Ano invalido,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+46,,Nome invalido,1900,Ano invalido,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+47,,Nome invalido,1900,Ano invalido,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+48,,Nome invalido,1900,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
+49,,Nome invalido,,Ano invalido,Beatriz@usp.br,,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+50,,Nome invalido,,Ano invalido,Beatriz@usp.br,,,Senha invalida,0,Cadastro Invalido
+51,,Nome invalido,,Ano invalido,Beatriz.gmail.com,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+52,,Nome invalido,,Ano invalido,Beatriz.gmail.com,Email invalido,,Senha invalida,0,Cadastro Invalido
+53,,Nome invalido,,Ano invalido,,Email invalido,Be@triz!Strong123,Senha forte,30,Cadastro Invalido
+54,,Nome invalido,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido

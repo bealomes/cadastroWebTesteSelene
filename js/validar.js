@@ -39,16 +39,19 @@ function validarNome(e) {
 
 // Função para validar o ano de nascimento
 function validarAno() {
-    const regexAno = /^(19\d\d|20[01]\d|2024)$/;
-    if (!ano.value.trim().match(regexAno)) {
+    const regexAno = /^(19\d{2}|20[01]\d|202[0-4])$/;
+    const anoValor = parseInt(ano.value.trim(), 10);
+
+    if (regexAno.test(ano.value.trim()) && anoValor >= 1904 && anoValor <= 2024) {
+        anoHelp.textContent = "";
+        return 1;
+    } else {
         anoHelp.textContent = "Ano invalido";
         anoHelp.style.color = "red";
         return 0;
-    } else {
-        anoHelp.textContent = "";
-        return 1;
     }
 }
+
 
 // Função para validar o e-mail
 function validarEmail() {

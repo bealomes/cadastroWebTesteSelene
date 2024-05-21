@@ -30,29 +30,33 @@ input_result_element = driver.find_element(By.ID, "formResult")
 
 # Testes de entrada (nome, resultado esperado do nome)
 nameTests = [
-    ("Gus", "Nome invalido"),
-    ("Gustavo Moura", ""),
+    ("Bea", "Nome invalido"),
+    ("Beatriz Lomes", ""),
     ("", "Nome invalido")
 ]
 
 # Testes de entrada (ano, resultado esperado do ano)
 yearTests = [
-    ("1999", ""),
+    ("2003", ""),
+    ("1900", "Ano invalido"),
     ("", "Ano invalido")
 ]
 
 # Testes de entrada (email, resultado esperado do email)
 emailTests = [
-    ("gustavoscarenci@usp.br", ""),
+    ("Beatriz@usp.br", ""),
+    ("Beatriz.gmail.com", "Email invalido"),
     ("", "Email invalido")
 ]
 
 # Testes de entrada (senha, resultado esperado da senha, força esperada da senha)
 passwordTests = [
-    ("3uAm@Pud1m99", "Senha moderada", "15"),
+    ("Be@triz!Strong123", "Senha forte", "30"),
+  
     ("", "Senha invalida", "0"),
 ]
-
+#  ("Beatr1z23!", "Senha moderada", "15"),
+ #   ("Beatr1z!", "Senha fraca", "5"),
 tests = {}
 testCount = 0
 total_iterations = len(nameTests) * len(yearTests) * len(emailTests) * len(passwordTests)
