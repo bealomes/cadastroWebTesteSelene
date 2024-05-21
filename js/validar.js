@@ -70,14 +70,16 @@ function validarEmail() {
 // Função para avaliar a força da senha
 function avaliarForcaSenha(senha) {
     const possuiCaractereEspecial = (senha.match(/[!@#%&]/g) || []).length > 0;
+    const qtdCaractereEspecial = (senha.match(/[!@#%&]/g) || []).length ;
     const possuiNumero = (senha.match(/[0-9]/g) || []).length > 0;
+    const qtdNumero =  (senha.match(/[0-9]/g) || []).length;
     const possuiLetraMaiuscula = (senha.match(/[A-Z]/g) || []).length > 0;
     const qtdLetraMaiuscula = (senha.match(/[A-Z]/g) || []).length;
     const comprimento = senha.length;
 
     console.log(qtdLetraMaiuscula);
 
-    if (comprimento > 12 && possuiCaractereEspecial && possuiNumero && possuiLetraMaiuscula && qtdLetraMaiuscula > 1) {
+    if (comprimento > 12 && possuiCaractereEspecial && possuiNumero && possuiLetraMaiuscula && qtdLetraMaiuscula > 1 && qtdCaractereEspecial > 1 && qtdNumero > 1) {
         return "Senha forte";
     } else if (comprimento > 8 && possuiCaractereEspecial && possuiNumero && possuiLetraMaiuscula) {
         return "Senha moderada";
