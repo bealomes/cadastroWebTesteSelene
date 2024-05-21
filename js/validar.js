@@ -81,20 +81,23 @@ function avaliarForcaSenha(senha) {
 // Função para validar a senha
 function validarSenha() {
     const regexSenha = /^(?=.*[0-9])(?=.*[!@#%&])(?=.*[a-zA-Z]).{6,20}$/;
-    const regexNomeAno = new RegExp(nome.value.trim() + "|" + ano.value.trim(), "i");
+    const nomeTrimado = nome.value.trim();
+    const anoTrimado = ano.value.trim();
+    
+    let regexNomeAno = null;
 
-    console.log(senha.value.trim());
-    console.log(senha.value.trim().match(regexNomeAno));
-
-    if(senha.value.trim().match(regexNomeAno)){
-        console.log("hijo de puta");
+    if (nomeTrimado) {
+        const nomePartes = nomeTrimado.split(' ');
+        if (nomePartes.length > 1) {
+            regexNomeAno = new RegExp(nomePartes[0] + "|" + nomePartes[1], "i");
+        } else {
+            regexNomeAno = new RegExp(nomePartes[0], "i");
+        }
     }
 
-    console.log(!senha.value.trim().match(regexSenha) );
-    console.log(senha.value.trim().match(regexNomeAno));
-
-    if (!senha.value.trim().match(regexSenha) || senha.value.trim().match(regexNomeAno)) {
-        
+    if (!senha.value.trim().match(regexSenha) ||
+        (regexNomeAno && senha.value.trim().match(regexNomeAno)) ||
+        (anoTrimado && senha.value.trim().includes(anoTrimado))) {
         senhaHelp.textContent = "Senha invalida";
         senhaHelp.style.color = "red";
         passStrengthMeter.value = 0;
