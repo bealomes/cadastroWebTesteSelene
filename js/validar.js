@@ -18,20 +18,22 @@ ano.addEventListener('focusout', validarAno);
 email.addEventListener('focusout', validarEmail);
 senha.addEventListener('focusout', validarSenha);
 
-// Função para validar o nome
+
+// Função para validar nome
 function validarNome(e) {
     const regexNomeCompleto = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
     const regexNome = /^[A-Z][a-z]+$/;
 
     var noSpacesName = nome.value.replace(/\s/g, '');
+    console.log(noSpacesName.length);
 
-    if (!e.target.value.trim().match(regexNomeCompleto) && !e.target.value.trim().match(regexNome) && (noSpacesName.length < 6)) {
+    if ((e.target.value.trim().match(regexNomeCompleto) || e.target.value.trim().match(regexNome)) && noSpacesName.length >= 6) {
+        nomeHelp.textContent = "";
+        return 1;
+    } else {
         nomeHelp.textContent = "Nome invalido";
         nomeHelp.style.color = "red";
         return 0;
-    } else {
-        nomeHelp.textContent = "";
-        return 1;
     }
 }
 
