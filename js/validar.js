@@ -11,7 +11,6 @@ var email = document.querySelector("#inputEmail");
 var emailHelp = document.querySelector("#inputEmailHelp");
 var senha = document.querySelector("#inputPassword");
 var senhaHelp = document.querySelector("#inputPasswordHelp");
-var senhaResult = document.querySelector("#inputResult");
 var passStrengthMeter =  document.querySelector('#passStrengthMeter');
 var showPassword =  document.querySelector('#showPassword');
 var form = document.querySelector('#singleForm');
@@ -105,14 +104,13 @@ function validarSenha() {
     if (!senha.value.match(regexSenha) || senha.value.match(regexNomeAno)) {
         senhaHelp.textContent = "Senha invalida";
         senhaHelp.style.color = "red";
-        senhaResult.textContent = "";
         passStrengthMeter.value = 0;
         passStrengthMeter.className = 'invalid';
         return 0;
     } else {
         senhaHelp.textContent = "";
         const forcaSenha = avaliarForcaSenha(senha.value);
-        senhaResult.textContent = forcaSenha;
+        senhaHelp.textContent = forcaSenha;
 
         switch (forcaSenha) {
             case "Senha forte":
@@ -147,7 +145,7 @@ ano.addEventListener('focusout', () => {
     if(anoTrimado.match(regexAno)==null){
         //muda o conteúdo e o estilo do objeto nomeHelp que referencia o elemento html com id=inputYearHelp
         anoHelp.textContent = "Ano invalido";
-        anoHelp.style.color="red";
+        anoHelp.style.color=   "red";
     }
     else{
         //objeto Date

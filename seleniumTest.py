@@ -29,7 +29,7 @@ input_result_element = driver.find_element(By.ID, "formResult")
 
 # input (name, expected name result)
 nameTests = [
-    ("Gus", ""),
+    ("Gus", "Nome invalido"),
     ("Gustavo Moura", ""),
     ("", "Nome invalido")
 ]
@@ -68,7 +68,7 @@ for (name, x_name_result), (year, x_year_result), (email, x_email_result), (pass
 
                 tests[testCount] = {}
 
-                x_result = "Cadastro invalido"
+                x_result = "Cadastro Invalido"
                 if x_name_result == "" and x_year_result == "" and x_email_result == "" and "Senha invalida" not in x_password_result:
                     x_result = "Cadastro Valido"
 
