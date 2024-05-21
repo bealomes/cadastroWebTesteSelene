@@ -1,25 +1,2 @@
 Test,Name,ExpectedNameResult,Year,ExpectedYearResult,Email,ExpectedEmailResult,Password,ExpectedPasswordResult,ExpectedPasswordStrength,ExpectedResult
 1,Gus,Nome invalido,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-2,Gus,Nome invalido,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-3,Gus,Nome invalido,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-4,Gus,Nome invalido,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
-5,Gus,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-6,Gus,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-7,Gus,Nome invalido,,Ano invalido,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-8,Gus,Nome invalido,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
-9,Gustavo Moura,,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Valido
-10,Gustavo Moura,,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-11,Gustavo Moura,,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-12,Gustavo Moura,,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
-13,Gustavo Moura,,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-14,Gustavo Moura,,,Ano invalido,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-15,Gustavo Moura,,,Ano invalido,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-16,Gustavo Moura,,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
-17,,Nome invalido,1999,,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-18,,Nome invalido,1999,,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-19,,Nome invalido,1999,,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-20,,Nome invalido,1999,,,Email invalido,,Senha invalida,0,Cadastro Invalido
-21,,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-22,,Nome invalido,,Ano invalido,gustavoscarenci@usp.br,,,Senha invalida,0,Cadastro Invalido
-23,,Nome invalido,,Ano invalido,,Email invalido,3uAm@Pud1m99,Senha moderada,15,Cadastro Invalido
-24,,Nome invalido,,Ano invalido,,Email invalido,,Senha invalida,0,Cadastro Invalido
