@@ -10,7 +10,7 @@ var senhaHelp = document.querySelector("#inputPasswordHelp");
 var passStrengthMeter = document.querySelector('#passStrengthMeter');
 var showPassword = document.querySelector('#showPassword');
 var form = document.querySelector('#singleForm');
-var formResult = document.querySelector('#formResult');
+var inputResult = document.querySelector('#inputResult');
 
 // Adicionando event listeners para os campos do formulário
 nome.addEventListener('focusout', validarNome);
@@ -144,10 +144,10 @@ form.addEventListener('submit', function(event) {
     const senhaValida = validarSenha();
 
     if (nomeValido && anoValido && emailValido && senhaValida) {
-        formResult.textContent = "Cadastro Valido";
-        formResult.style.color = "green";
+        inputResult.textContent = "Cadastro Valido";
+        inputResult.style.color = "green";
     } else {
-        formResult.textContent = "Cadastro Invalido";
-        formResult.style.color = "red";
+        inputResult.textContent = "Cadastro Invalido";
+        inputResult.style.color = "red";
     }
 });
