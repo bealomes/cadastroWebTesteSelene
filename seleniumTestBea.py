@@ -9,7 +9,7 @@ import time
 driver = webdriver.Chrome()
 
 # Abrindo a URL
-driver.get("https://guilhermecastanon.github.io/DESAFIO-Cadastro-de-Usuario---WEBDEV/")
+driver.get("https://bealomes.github.io/cadastroWebTesteSelene/")
 
 # Localizando os elementos do formulário
 input_name_element = driver.find_element(By.ID, "inputName")
